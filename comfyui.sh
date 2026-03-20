@@ -5,7 +5,7 @@
 # Usage:
 #   curl -fsSL https://get.umeai.art/comfyui.sh | sh
 #
-# This script clones the installer repo and delegates to Install.sh.
+# This script downloads the installer and delegates to Install.sh.
 # ============================================================================
 
 set -e
@@ -26,25 +26,9 @@ check_cmd() {
 }
 
 check_cmd git "Install from: https://git-scm.com or your package manager"
-check_cmd curl "Install from your package manager (apt install curl)"
 
-# --- Ask for install path ---
-DEFAULT_PATH="$HOME/ComfyUI"
-echo "Where would you like to install ComfyUI?"
-echo "  Default: $DEFAULT_PATH"
-echo ""
-printf "Install path (Enter for default): "
-read -r INSTALL_PATH
-INSTALL_PATH="${INSTALL_PATH:-$DEFAULT_PATH}"
-
-# Ensure directory exists
-mkdir -p "$INSTALL_PATH"
-
-echo ""
-echo "[INFO] Install path: $INSTALL_PATH"
-
-# --- Clone installer repo ---
-INSTALLER_DIR="$INSTALL_PATH/.installer"
+# --- Download installer to temp ---
+INSTALLER_DIR="${TMPDIR:-/tmp}/ComfyUI-Auto_installer"
 REPO_URL="https://github.com/UmeAiRT/ComfyUI-Auto_installer.git"
 BRANCH="python-rewrite"  # Change to 'main' after merge
 
@@ -64,10 +48,10 @@ fi
 echo "[INFO] Installer ready."
 echo ""
 
-# --- Launch the existing Install.sh ---
+# --- Launch Install.sh (it handles everything from here) ---
 INSTALL_SH="$INSTALLER_DIR/Install.sh"
 if [ ! -f "$INSTALL_SH" ]; then
-    echo "[ERROR] Install.sh not found in cloned repo."
+    echo "[ERROR] Install.sh not found."
     exit 1
 fi
 
