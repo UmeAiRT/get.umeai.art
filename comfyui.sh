@@ -3,7 +3,7 @@
 # UmeAiRT ComfyUI — Remote One-Liner Installer
 #
 # Usage:
-#   curl -fsSL https://get.umeai.art/install.sh | sh
+#   curl -fsSL https://get.umeai.art/comfyui.sh | sh
 #
 # This script clones the installer repo and delegates to Install.sh.
 # ============================================================================

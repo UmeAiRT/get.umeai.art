@@ -2,7 +2,7 @@
 # UmeAiRT ComfyUI — Remote One-Liner Installer (PowerShell)
 #
 # Usage:
-#   irm https://get.umeai.art/install.ps1 | iex
+#   irm https://get.umeai.art/comfyui.ps1 | iex
 #
 # This script clones the installer repo and delegates to Install.bat.
 # ============================================================================
