@@ -41,6 +41,7 @@ Write-Host "[INFO] Install path: $InstallPath" -ForegroundColor Green
 # --- Clone installer repo ---
 $InstallerDir = Join-Path $InstallPath ".installer"
 $RepoUrl = "https://github.com/UmeAiRT/ComfyUI-Auto_installer.git"
+$Branch = "python-rewrite"  # Change to 'main' after merge
 
 if (Test-Path $InstallerDir) {
     Write-Host "[INFO] Updating installer..." -ForegroundColor Cyan
@@ -48,11 +49,11 @@ if (Test-Path $InstallerDir) {
     if ($LASTEXITCODE -ne 0) {
         Write-Host "[INFO] Pull failed, re-cloning..." -ForegroundColor Yellow
         Remove-Item -Recurse -Force $InstallerDir
-        git clone --depth 1 $RepoUrl $InstallerDir --quiet
+        git clone --depth 1 -b $Branch $RepoUrl $InstallerDir --quiet
     }
 } else {
     Write-Host "[INFO] Downloading installer..." -ForegroundColor Cyan
-    git clone --depth 1 $RepoUrl $InstallerDir --quiet
+    git clone --depth 1 -b $Branch $RepoUrl $InstallerDir --quiet
 }
 
 if ($LASTEXITCODE -ne 0) {

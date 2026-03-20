@@ -46,18 +46,19 @@ echo "[INFO] Install path: $INSTALL_PATH"
 # --- Clone installer repo ---
 INSTALLER_DIR="$INSTALL_PATH/.installer"
 REPO_URL="https://github.com/UmeAiRT/ComfyUI-Auto_installer.git"
+BRANCH="python-rewrite"  # Change to 'main' after merge
 
 if [ -d "$INSTALLER_DIR/.git" ]; then
     echo "[INFO] Updating installer..."
     git -C "$INSTALLER_DIR" pull --ff-only --quiet 2>/dev/null || {
         echo "[INFO] Pull failed, re-cloning..."
         rm -rf "$INSTALLER_DIR"
-        git clone --depth 1 "$REPO_URL" "$INSTALLER_DIR" --quiet
+        git clone --depth 1 -b "$BRANCH" "$REPO_URL" "$INSTALLER_DIR" --quiet
     }
 else
     echo "[INFO] Downloading installer..."
     rm -rf "$INSTALLER_DIR"
-    git clone --depth 1 "$REPO_URL" "$INSTALLER_DIR" --quiet
+    git clone --depth 1 -b "$BRANCH" "$REPO_URL" "$INSTALLER_DIR" --quiet
 fi
 
 echo "[INFO] Installer ready."
