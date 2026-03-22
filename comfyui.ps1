@@ -24,8 +24,8 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 
 # --- Download installer to temp ---
 $InstallerDir = Join-Path $env:TEMP "ComfyUI-Auto_installer"
-$RepoUrl = "https://github.com/UmeAiRT/ComfyUI-Auto_installer.git"
-$Branch = "python-rewrite"  # Change to 'main' after merge
+$RepoUrl = "https://github.com/UmeAiRT/ComfyUI-Auto_installer-Python.git"
+$Branch = "main"
 
 if (Test-Path (Join-Path $InstallerDir ".git")) {
     Write-Host "[INFO] Updating installer..." -ForegroundColor Cyan

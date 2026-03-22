@@ -29,8 +29,8 @@ check_cmd git "Install from: https://git-scm.com or your package manager"
 
 # --- Download installer to temp ---
 INSTALLER_DIR="${TMPDIR:-/tmp}/ComfyUI-Auto_installer"
-REPO_URL="https://github.com/UmeAiRT/ComfyUI-Auto_installer.git"
-BRANCH="python-rewrite"  # Change to 'main' after merge
+REPO_URL="https://github.com/UmeAiRT/ComfyUI-Auto_installer-Python.git"
+BRANCH="main"
 
 if [ -d "$INSTALLER_DIR/.git" ]; then
     echo "[INFO] Updating installer..."
