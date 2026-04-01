@@ -100,4 +100,11 @@ echo ""
 # --- Launch Install.sh ---
 chmod +x "$INSTALL_SH"
 cd "$INSTALLER_DIR"
+
+# Reconnect standard input to the terminal so interactive prompts work
+# when this script is run via `curl ... | sh`
+if [ ! -t 0 ] && [ -c /dev/tty ]; then
+    exec < /dev/tty
+fi
+
 exec "$INSTALL_SH"
