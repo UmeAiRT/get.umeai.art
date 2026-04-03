@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 # ============================================================================
-# UmeAiRT ComfyUI â€” Remote One-Liner Installer
+# UmeAiRT ComfyUI â€?Remote One-Liner Installer
 #
 # Usage:
 #   curl -fsSL https://get.umeai.art/comfyui.sh | sh
 #
 # This script downloads the installer and delegates to Install.sh.
-# Sources: GitHub (git) â†’ HuggingFace (ZIP) â†’ ModelScope (ZIP)
+# Sources: GitHub (git) â†?HuggingFace (ZIP) â†?ModelScope (ZIP)
 # ============================================================================
 
 set -e
 
 echo ""
 echo "============================================================================"
-echo "          UmeAiRT ComfyUI â€” Auto-Installer"
+echo "          UmeAiRT ComfyUI â€?Auto-Installer"
 echo "============================================================================"
 echo ""
 

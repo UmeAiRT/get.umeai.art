@@ -1,18 +1,18 @@
 # ============================================================================
-# UmeAiRT ComfyUI â€” Remote One-Liner Installer (PowerShell)
+# UmeAiRT ComfyUI â€?Remote One-Liner Installer (PowerShell)
 #
 # Usage:
 #   irm https://get.umeai.art/comfyui.ps1 | iex
 #
 # This script downloads the installer and delegates to Install.bat.
-# Sources: GitHub (git) â†’ HuggingFace (ZIP) â†’ ModelScope (ZIP)
+# Sources: GitHub (git) â†?HuggingFace (ZIP) â†?ModelScope (ZIP)
 # ============================================================================
 
 $ErrorActionPreference = "Stop"
 
 Write-Host ""
 Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host "          UmeAiRT ComfyUI â€” Auto-Installer" -ForegroundColor Cyan
+Write-Host "          UmeAiRT ComfyUI â€?Auto-Installer" -ForegroundColor Cyan
 Write-Host "============================================================================" -ForegroundColor Cyan
 Write-Host ""
 
